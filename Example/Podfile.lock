@@ -1,0 +1,16 @@
+PODS:
+  - AHServiceRouter (0.1.0)
+
+DEPENDENCIES:
+  - AHServiceRouter (from `../`)
+
+EXTERNAL SOURCES:
+  AHServiceRouter:
+    :path: ../
+
+SPEC CHECKSUMS:
+  AHServiceRouter: 6e05f103591d2183cd4172a92070b69083f74fde
+
+PODFILE CHECKSUM: 6b4cf1d472ff6a23658534434b2f81e5161cfb14
+
+COCOAPODS: 1.3.0.beta.2
