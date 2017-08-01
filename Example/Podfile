@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'AHServiceRouter_Example' do
+  pod 'AHServiceRouter', :path => '../'
+
+  target 'AHServiceRouter_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
