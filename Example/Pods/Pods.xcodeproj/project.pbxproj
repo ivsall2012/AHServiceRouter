@@ -12,11 +12,11 @@
 		1F3F2764B74C5E1C0A4F7F052CAAABD7 /* Pods-AHServiceRouter_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 58F28A59C2599B9A4E4E57FDFBEDAFF8 /* Pods-AHServiceRouter_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		40B2F3CEF11994AA9CA62CF5C2B83C31 /* Pods-AHServiceRouter_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FB54968FA0892630DD7A0CD89E18ED /* Pods-AHServiceRouter_Tests-dummy.m */; };
 		5BE16354B1046D763490D82FBB67145E /* Pods-AHServiceRouter_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BF1A3596231C008E007A86C5F8BB759 /* Pods-AHServiceRouter_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		88C9DAB107EFA8AB74C99713A3A7284C /* AHServiceRouter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF222DB01CEAB950BEE95B0DA838507 /* AHServiceRouter-dummy.m */; };
+		95BD8D69BA8D1C06A3312EF3CDB37146 /* AHServiceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59725EA368CEE9920D087EE045334F0C /* AHServiceRouter.swift */; };
 		B9ABAE335EA00425D3668F7CBF4788D5 /* AHServiceRouter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D7BA65E4BCD0715B1DACE6F1A9188303 /* AHServiceRouter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9CE4EABB6732159C849718DB78C5630 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		D363CA739593BFD0D0745827F57FA89B /* AHServiceRouter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF222DB01CEAB950BEE95B0DA838507 /* AHServiceRouter-dummy.m */; };
 		ECCA1D73AFE4973FFA7A8D992DE72B92 /* Pods-AHServiceRouter_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E81BAD6C41A672E1379D412E50EFC0 /* Pods-AHServiceRouter_Example-dummy.m */; };
-		ECDF179404E1DF7A9F7798A571C01174 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527CF4A0B8E3EEB8A728EECBDB87D6C /* ReplaceMe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,12 +38,12 @@
 		402B7E102A5791F82AD5D7A0C7BC4FE7 /* Pods-AHServiceRouter_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AHServiceRouter_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		4FF222DB01CEAB950BEE95B0DA838507 /* AHServiceRouter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AHServiceRouter-dummy.m"; sourceTree = "<group>"; };
 		58F28A59C2599B9A4E4E57FDFBEDAFF8 /* Pods-AHServiceRouter_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AHServiceRouter_Example-umbrella.h"; sourceTree = "<group>"; };
+		59725EA368CEE9920D087EE045334F0C /* AHServiceRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AHServiceRouter.swift; sourceTree = "<group>"; };
 		6400A53E8438848C8FE58008858F7EE5 /* AHServiceRouter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AHServiceRouter.modulemap; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		67FBCA7C932C3DF06265DD145320D644 /* Pods_AHServiceRouter_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AHServiceRouter_Tests.framework; path = "Pods-AHServiceRouter_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BF1A3596231C008E007A86C5F8BB759 /* Pods-AHServiceRouter_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AHServiceRouter_Tests-umbrella.h"; sourceTree = "<group>"; };
 		6CD44657A4BD949884AE39257590B8BD /* Pods-AHServiceRouter_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AHServiceRouter_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7527CF4A0B8E3EEB8A728EECBDB87D6C /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 		80FB54968FA0892630DD7A0CD89E18ED /* Pods-AHServiceRouter_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AHServiceRouter_Tests-dummy.m"; sourceTree = "<group>"; };
 		8C8AD5B62674FB2C3D64B66DFDDC9565 /* Pods-AHServiceRouter_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AHServiceRouter_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -92,10 +92,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3638FB1D292683951C754808C8B0756D /* Classes */ = {
+		06B668DC1996F4818245F8B1F7AB8BFF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				7527CF4A0B8E3EEB8A728EECBDB87D6C /* ReplaceMe.swift */,
+				59725EA368CEE9920D087EE045334F0C /* AHServiceRouter.swift */,
 			);
 			name = Classes;
 			path = Classes;
@@ -151,7 +151,7 @@
 		83988F18A154348E555D68D25B57B755 /* AHServiceRouter */ = {
 			isa = PBXGroup;
 			children = (
-				3638FB1D292683951C754808C8B0756D /* Classes */,
+				06B668DC1996F4818245F8B1F7AB8BFF /* Classes */,
 			);
 			name = AHServiceRouter;
 			path = AHServiceRouter;
@@ -258,7 +258,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5AC1DE2D0541176DB3F816A4374352F6 /* Build configuration list for PBXNativeTarget "AHServiceRouter" */;
 			buildPhases = (
-				39168D68212C70A8FA20F55C64616A63 /* Sources */,
+				AD25D615AEC99C8C8E0FB078FA1609C4 /* Sources */,
 				84287B06A98408C45DA783854428324F /* Frameworks */,
 				7E889AD26AA25741A76FDC54BC29F4F0 /* Headers */,
 			);
@@ -343,12 +343,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		39168D68212C70A8FA20F55C64616A63 /* Sources */ = {
+		AD25D615AEC99C8C8E0FB078FA1609C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D363CA739593BFD0D0745827F57FA89B /* AHServiceRouter-dummy.m in Sources */,
-				ECDF179404E1DF7A9F7798A571C01174 /* ReplaceMe.swift in Sources */,
+				88C9DAB107EFA8AB74C99713A3A7284C /* AHServiceRouter-dummy.m in Sources */,
+				95BD8D69BA8D1C06A3312EF3CDB37146 /* AHServiceRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,7 +9,7 @@
 import Foundation
 
 public typealias AHServiceCompletion = (_ finished: Bool,_ userInfo: [String: Any]?) -> Void
-public typealias AHServiceWorker = (_ userInfo: [String: Any], _ completion: AHServiceCompletion?) -> Void
+public typealias AHServiceWorker = (_ userInfo: [String: Any], _ completion: AHServiceCompletion?) -> [String: Any]?
 public typealias AHServiceVCWorker = (_ userInfo: [String: Any]) -> UIViewController?
 
 
@@ -127,25 +127,25 @@ public final class AHServiceRouter {
         }
     }
     
-    
-    public static func use(service: String, taskName: String, userInfo: [String: Any], completion: AHServiceCompletion?) {
+    @discardableResult
+    public static func use(service: String, taskName: String, userInfo: [String: Any], completion: AHServiceCompletion?) -> [String: Any]? {
 
         guard let server = services[service] else {
             assert(false,"AHService: service:\(service) not registered")
-            return
+            return nil
         }
         
         guard let task = server.getTask(taskName: taskName) else {
             assert(false,"AHService: \(service).\(taskName) not found")
-            return
+            return nil
         }
         
         guard case let AHServiceWorkerType.service(worker) = task.workerType else {
             assert(false,"worker type doesn't matched!!")
-            return
+            return nil
         }
         
-        worker(userInfo, completion)
+        return worker(userInfo, completion)
         
     }
     
