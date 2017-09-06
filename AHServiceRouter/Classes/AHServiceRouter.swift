@@ -120,6 +120,7 @@ public final class AHServiceRouter {
                 return
             }
             server.add(task: task)
+            services[service] = server
         }else{
             var server = AHServer(service: service)
             server.add(task: task)
