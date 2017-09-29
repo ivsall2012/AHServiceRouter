@@ -87,24 +87,25 @@ public final class AHServiceRouter {
     // ['serviceName': AHServer]
     fileprivate static var services = [String : AHServer]()
     
-    
-    /// AHServiceRouter does not keep the provider object or does any modification.
+    /// Use this method to provide services/tasks, it does NOT help you navigate VCs.
+    /// AHServiceRouter does not keep the provided object or does any modification.
     /// - Parameters:
     ///   - service: The service name. This should be unique globally.
     ///   - taskName: The name of the task. This should be unique under the service.
     ///   - worker: A closure callback that provides more info for the provider to process later when the service is being used.
-    public static func register(service: String, taskName: String, worker: @escaping AHServiceWorker) {
+    public static func registerTask(_ service: String, taskName: String, worker: @escaping AHServiceWorker) {
         
         let task = AHTask(taskName: taskName, workerType: AHServiceWorkerType.service(worker))
         register(service: service, task: task)
     }
     
 
+    /// Use this method to provide services/tasks for navigating VCs.
     /// - Parameters:
     ///   - service: The service name. This should be unique globally.
     ///   - taskName: The name of the task. This should be unique under the service.
     ///   - worker: A closure callback that notify the provider later to give a VC to present or push.
-    public static func registerVC(service: String, taskName: String, worker: @escaping AHServiceVCWorker) {
+    public static func registerVC(_ service: String, taskName: String, worker: @escaping AHServiceVCWorker) {
         
         let task = AHTask(taskName: taskName, workerType: AHServiceWorkerType.navigateVC(worker))
         register(service: service, task: task)
@@ -129,7 +130,7 @@ public final class AHServiceRouter {
     }
     
     @discardableResult
-    public static func use(service: String, taskName: String, userInfo: [String: Any], completion: AHServiceCompletion?) -> [String: Any]? {
+    public static func doTask(_ service: String, taskName: String, userInfo: [String: Any], completion: AHServiceCompletion?) -> [String: Any]? {
 
         guard let server = services[service] else {
             assert(false,"AHService: service:\(service) not registered")
@@ -150,7 +151,7 @@ public final class AHServiceRouter {
         
     }
     
-    public static func useVC(service: String, taskName: String, userInfo: [String: Any], type: AHServiceNavigationType, completion: AHServiceCompletion?) {
+    public static func navigateVC(_ service: String, taskName: String, userInfo: [String: Any], type: AHServiceNavigationType, completion: AHServiceCompletion?) {
         
         guard let server = services[service] else {
             assert(false, "AHService: service:\(service) not registered")
