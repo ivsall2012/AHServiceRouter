@@ -20,9 +20,6 @@ public enum AHServiceNavigationType{
     case presentWithNavVC(currentVC: UIViewController)
     /// Push a server side provided VC by the closest navVC to the rootVC
     case push(navVC: UINavigationController)
-    
-    /// Pop to the VC you returned, given that the VC is actually in the navVC's childVC stack.
-    case pop(navVC: UINavigationController)
 }
 
 
@@ -180,9 +177,7 @@ public final class AHServiceRouter {
                     let navVC = UINavigationController(rootViewController: vc)
                     currentVC.present(navVC, animated: true, completion: nil)
                 case let .push(navVC):
-                    navVC.pushViewController(vc, animated: true)
-                case let .pop(navVC):
-                    navVC.popToViewController(vc, animated: true)
+                    pushVC(targetVC: vc, navVC: navVC)
             }
             completion?(true, nil)
         }else{
@@ -190,6 +185,44 @@ public final class AHServiceRouter {
         }
         
         
+    }
+    
+    /// Reuse a VC from a navigationVC, default is the first navigationVC under the application's rootVC.
+    public static func reuseVC(_ shouldBeReused: (_ currentVC: UIViewController) -> Bool) -> UIViewController? {
+        guard let delegate = UIApplication.shared.delegate,
+            let window = delegate.window,
+            let rootVC = window?.rootViewController as? UINavigationController else {
+                assert(false, "application delegate or window is nil???")
+        }
+
+        let reversedVCs = rootVC.viewControllers.reversed()
+        var newVC: UIViewController?
+        for vc in reversedVCs {
+            if shouldBeReused(vc) {
+                newVC = vc
+                break
+            }
+        }
+
+        
+        return newVC
+    }
+    
+    private static func pushVC(targetVC: UIViewController, navVC: UINavigationController) {
+        // there's this vc in the stack already, then pop to it
+        var newVC: UIViewController?
+        for childVC in navVC.viewControllers {
+            if childVC === targetVC {
+                newVC = childVC
+                break
+            }
+        }
+        
+        if newVC == nil {
+            navVC.pushViewController(targetVC, animated: true)
+        }else{
+            navVC.popToViewController(newVC!, animated: true)
+        }
     }
     
     public static func allServices() -> [String] {
