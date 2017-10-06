@@ -20,6 +20,9 @@ public enum AHServiceNavigationType{
     case presentWithNavVC(currentVC: UIViewController)
     /// Push a server side provided VC by the closest navVC to the rootVC
     case push(navVC: UINavigationController)
+    
+    /// Pop to the VC you returned, given that the VC is actually in the navVC's childVC stack.
+    case pop(navVC: UINavigationController)
 }
 
 
@@ -177,7 +180,9 @@ public final class AHServiceRouter {
                     let navVC = UINavigationController(rootViewController: vc)
                     currentVC.present(navVC, animated: true, completion: nil)
                 case let .push(navVC):
-                    pushVC(targetVC: vc, navVC: navVC)
+                    navVC.pushViewController(vc, animated: true)
+                case let .pop(navVC):
+                    navVC.popToViewController(vc, animated: true)
             }
             completion?(true, nil)
         }else{
@@ -185,23 +190,6 @@ public final class AHServiceRouter {
         }
         
         
-    }
-    
-    private static func pushVC(targetVC: UIViewController, navVC: UINavigationController) {
-        // there's this vc in the stack already, then pop to it
-        var newVC: UIViewController?
-        for childVC in navVC.viewControllers {
-            if childVC == targetVC {
-                newVC = childVC
-                break
-            }
-        }
-        
-        if newVC == nil {
-            navVC.pushViewController(targetVC, animated: true)
-        }else{
-            navVC.popToViewController(newVC!, animated: true)
-        }
     }
     
     public static func allServices() -> [String] {
