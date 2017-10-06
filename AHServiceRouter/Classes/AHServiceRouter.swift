@@ -193,6 +193,7 @@ public final class AHServiceRouter {
             let window = delegate.window,
             let rootVC = window?.rootViewController as? UINavigationController else {
                 assert(false, "application delegate or window is nil???")
+                return nil
         }
 
         let reversedVCs = rootVC.viewControllers.reversed()
